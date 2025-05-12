@@ -1,0 +1,31 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+env/
+venv/
+*.ipynb_checkpoints
+
+# 영상 및 프레임 결과물
+/videos/
+/frames/
+*.mp4
+*.webm
+*.avi
+*.jpg
+*.png
+
+# 인증 정보
+*.key
+*.env
+config.json
+api_key.txt
+
+# Jupyter Notebook 자동 저장 파일
+*.checkpoint
+
+# API_KEY 숨기기
+.env

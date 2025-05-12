@@ -1,0 +1,181 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YPphtko7xV6qOfz9yb9K4YIPUNI",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 7,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MQKpOqA9r2oo-TNPy5UgoRFIefs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "m6DHBR-2Rxo"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-08T02:05:30Z",
+        "channelId": "UCoVz66yWHzVsXAFG8WhJK9g",
+        "title": "[2025 메디힐 KBO 퓨처스리그 H/L] KT 위즈 vs 삼성 라이온즈(05.07.)",
+        "description": "KBO 리그의 미래 퓨처스리그 경기의 하이라이트 영상을 만나보세요 #야구 #baseball #KBO #퓨처스리그 #하이라이트.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/m6DHBR-2Rxo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/m6DHBR-2Rxo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/m6DHBR-2Rxo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-08T02:05:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "tZSESNtI4tUYeFJf8CmdeVLNUPk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_qag_o1BRsQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-07T01:48:44Z",
+        "channelId": "UCoVz66yWHzVsXAFG8WhJK9g",
+        "title": "[2025 메디힐 KBO 퓨처스리그 H/L] KT 위즈 vs 삼성 라이온즈(05.06.)",
+        "description": "KBO 리그의 미래 퓨처스리그 경기의 하이라이트 영상을 만나보세요 #야구 #baseball #KBO #퓨처스리그 #하이라이트.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_qag_o1BRsQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_qag_o1BRsQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_qag_o1BRsQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-07T01:48:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BViXEUPM-jkBM-ErnptwGdBEPTQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ynkc8gzfQlQ"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-06T09:09:04Z",
+        "channelId": "UCoVz66yWHzVsXAFG8WhJK9g",
+        "title": "[LG vs 두산] 야구 하이라이트｜5.6｜2025 신한 SOL뱅크 KBO 리그｜HIGHLIGHT",
+        "description": "[LG vs 두산] 야구 하이라이트｜5.6｜2025 신한 SOL뱅크 KBO 리그｜HIGHLIGHT KBO 리그 모바일 및 인터넷 중계는 TVING에서 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ynkc8gzfQlQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ynkc8gzfQlQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ynkc8gzfQlQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-06T09:09:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "huhsz7I742FPNVf_JltnTQdsVys",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ZHX7qy-7Xzk"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-05T01:39:37Z",
+        "channelId": "UCoVz66yWHzVsXAFG8WhJK9g",
+        "title": "[2025 메디힐 KBO 퓨처스리그 H/L] 롯데 자이언츠 vs 두산 베어스(05.04.)",
+        "description": "KBO 리그의 미래 퓨처스리그 경기의 하이라이트 영상을 만나보세요 #야구 #baseball #KBO #퓨처스리그 #하이라이트.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZHX7qy-7Xzk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZHX7qy-7Xzk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZHX7qy-7Xzk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-05T01:39:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "feFDEOIgiWfym_l-03yaUElJIE8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "gmZwn4jjPdU"
+      },
+      "snippet": {
+        "publishedAt": "2025-05-07T10:05:25Z",
+        "channelId": "UCoVz66yWHzVsXAFG8WhJK9g",
+        "title": "[SSG vs 롯데] 이게 바로 야구 유전자?! 롯데 정현수 할머니와 장두성 어머니의 뜻깊은 시구 | 5.7 | #크보모먼트 BY 삼진제약 | 야구 하이라이트",
+        "description": "[SSG vs 롯데] 이게 바로 야구 유전자?! 롯데 정현수 할머니와 장두성 어머니의 뜻깊은 시구 | 5.7 | #크보모먼트 BY 삼진제약 | 야구 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gmZwn4jjPdU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gmZwn4jjPdU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gmZwn4jjPdU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBO",
+        "liveBroadcastContent": "none",
+        "publishTime": "2025-05-07T10:05:25Z"
+      }
+    }
+  ]
+}
