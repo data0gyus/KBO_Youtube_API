@@ -29,3 +29,4 @@ api_key.txt
 
 # API_KEY 숨기기
 .env
+.json
