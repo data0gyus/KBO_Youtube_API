@@ -20,11 +20,22 @@ for item in video_data:
     title = item["title"]
     published_at = item["publishedAt"][:10]  # 날짜만 출력 (2025-05-05)
 
-    # 특수문자 삭제
+    # 제목 전처리
     clean_title = re.sub(r'[\\/*?:"<>|]', "", title).strip()
 
-    # 파일 이름 날짜_제목.mp4로 출력
-    filename = f"{published_at}_{clean_title}.mp4"
+    # [팀 vs 팀] 추출
+    match_vs = re.search(r'[^ ]+ vs [^ ]+', clean_title)
+
+    # "더블헤더 1차전", "더블헤더 2차전", "경기" 등의 구분 정보 추출
+    match_suffix = re.search(r'(더블헤더\s*\d차전|경기)', clean_title)
+
+    if match_vs:
+        vs_title = match_vs.group(0)
+        suffix = match_suffix.group(0) if match_suffix else "영상"
+        filename = f"{published_at}_[{vs_title}]_{suffix}"
+    else:
+        filename = f"{published_at}_[{clean_title[:20]}]"
+
     video_path = os.path.join(VIDEO_DIR, filename)
 
     # 이미 다운 완료시 건너뛰기
@@ -38,8 +49,13 @@ for item in video_data:
 
     subprocess.run([
         "yt-dlp",
-        "-f", "bv[height<=720]+ba/b[height<=720]",
-        "-o", video_path,
+        "--no-write-thumbnail",
+        "--no-write-info-json",
+        "--no-write-comments",
+        "--no-write-sub",
+        "--no-part",
+        "-f", "best[ext=mp4][height<=720]",
+        "-o", f"{video_path}.%(ext)s",
         url
     ])
 
