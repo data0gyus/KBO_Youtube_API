@@ -30,3 +30,7 @@ api_key.txt
 # API_KEY 숨기기
 .env
 *.json
+
+
+# AI 가 도와주는 예시들 
+/example/
