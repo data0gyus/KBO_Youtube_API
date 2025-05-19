@@ -71,20 +71,22 @@ def process_video_in_memory(video_path: str, reference_img_path: str, interval: 
                 rgb_frame, face_locations)
 
             for encoding, (top, right, bottom, left) in zip(face_encodings, face_locations):
-                result = face_recognition.compare_faces(
-                    [reference_encoding], encoding, tolerance=tolerance)
-                if result[0]:
+                distance = face_recognition.face_distance(
+                    [reference_encoding], encoding)[0]
+
+                if distance < tolerance:
                     time_position_sec = frame_count / fps
                     time_str = str(datetime.timedelta(
                         seconds=int(time_position_sec)))
-
-                    print(f"\n✅ 얼굴 매칭 성공: {time_str} 위치")
+                    print(f"\n✅ 얼굴 매칭 성공: {time_str} 위치 (거리: {distance:.4f})")
 
                     save_path = os.path.join(
                         "matched_faces", f"frame_{frame_count}.jpg")
                     cv2.imwrite(save_path, frame)
                     print(f"[저장 완료] {save_path}")
                     match_count += 1
+                else:
+                    print(f"\n⚠️ 유사하지만 기준 거리 초과 (거리: {distance:.4f}) → 무시")
 
         frame_count += 1
         progress.update(1)
@@ -95,8 +97,9 @@ def process_video_in_memory(video_path: str, reference_img_path: str, interval: 
 
 
 if __name__ == "__main__":
-    video_path = "C:/mini/videos/2025-04-11_[[두산 vs LG]]_경기.mp4"
-    reference_img_path = "C:/mini/sample2.jpg"
+    # video_path = "C:/mini/videos/2025-04-11_[[두산 vs LG]]_경기.mp4"
+    video_path = "C:/mini/downloads/20250512.mp4"
+    reference_img_path = "C:/mini/sample.jpg"
 
     process_video_in_memory(
         video_path=video_path,
