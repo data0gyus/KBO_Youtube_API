@@ -99,7 +99,7 @@ def process_video_in_memory(video_path: str, reference_img_path: str, interval: 
 if __name__ == "__main__":
     # video_path = "C:/mini/videos/2025-04-11_[[두산 vs LG]]_경기.mp4"
     video_path = "C:/mini/downloads/20250512.mp4"
-    reference_img_path = "C:/mini/sample.jpg"
+    reference_img_path = "C:/mini/sample2.jpg"
 
     process_video_in_memory(
         video_path=video_path,
