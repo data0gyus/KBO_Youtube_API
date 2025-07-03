@@ -65,9 +65,11 @@ def augment_reference_image(image, face_location):
 
     for angle in [-15, 15]:  # -15도와 +15도로 각각 회전
         matrix = cv2.getRotationMatrix2D(center, angle, 1.0)  # 회전 변환 행렬 생성
-        # 회전 시 이미지 밖으로 나가는 부분을 검은색(0,0,0)으로 채웁니다.
+        # 회전 시 이미지 밖으로 나가는 부분을 검은색(BORDER_CONSTANT) 대신
+        # 가장자리 픽셀을 복제(BORDER_REPLICATE)하여 채웁니다.
+        # 이는 dlib의 랜드마크 감지기가 더 안정적으로 작동하도록 돕습니다.
         rotated = cv2.warpAffine(face_crop, matrix, (width, height),
-                                 borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))
+                                 borderMode=cv2.BORDER_REPLICATE)
         augmented_faces.append(rotated)
 
     return augmented_faces
@@ -140,10 +142,18 @@ def create_multiple_encodings_from_single_image(net, image_path):
     # tqdm을 사용하여 증강 얼굴 인코딩 진행 상황을 시각적으로 표시
     for i, face_aug in enumerate(tqdm(augmented_faces, desc="✨ 증강 얼굴 인코딩 중")):
         try:
-            # face_aug는 이미 얼굴이 크롭된 이미지이므로, face_locations 인자를 전달하지 않습니다.
-            # face_recognition이 이 크롭된 이미지 내에서 얼굴을 다시 감지하고 랜드마크를 예측한 후 인코딩합니다.
-            # 이 과정에서 내부적으로 CNN 기반 모델이 사용될 수 있습니다.
-            encs = face_recognition.face_encodings(face_aug)
+            # 증강된 이미지(face_aug)에서 얼굴을 다시 찾고 인코딩을 수행합니다.
+            # 회전 시 검은 배경 대신 BORDER_REPLICATE를 사용하여 dlib의 안정성을 높였으므로,
+            # 라이브러리가 스스로 얼굴을 찾도록 하는 것이 가장 강건한 방법입니다.
+
+            h, w, _ = face_aug.shape
+            face_aug_rgb = cv2.cvtColor(face_aug, cv2.COLOR_BGR2RGB)
+            face_locations_for_aug = [(0, w, h, 0)]
+
+            encs = face_recognition.face_encodings(
+                face_aug_rgb,
+                known_face_locations=face_locations_for_aug
+            )
 
             if encs:  # 인코딩이 성공적으로 생성되었다면
                 encodings.append(encs[0])  # 첫 번째 인코딩만 사용 (얼굴이 하나라고 가정)
